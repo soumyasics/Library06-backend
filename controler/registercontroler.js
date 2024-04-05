@@ -65,6 +65,44 @@ const findstudentprofile=(req,res)=>{
     })
   })
 }
+const findeditprofile=(req,res)=>{
+  const id=req.params.id
+  registerschema.findById(id)
+  .then((data)=>{
+    res.json({
+      msg:"student detail found",
+      data:data
+    })
+  })
+    .catch((err)=>{
+      res.json({
+        msg:"not found student detail",
+        err:err
+    
+    })
+  })
+}
 
+const findprofileupdate=(req,res)=>{
+  const id=req.params.id
+  
+ 
+  const{studentname,studentnumber,studentemail,studentpassword}=req.body
 
-module.exports={studentregisterdata,viewOne,findstudentprofile}
+  registerschema.findByIdAndUpdate(id,{studentname,studentnumber,studentemail,studentpassword})
+  .then((data)=>{
+    res.json({
+      msg:"updated",
+      data:data
+    })
+  })
+  .catch((err)=>{
+    res.json({
+      msg:"not updated",
+      err:err
+
+    })
+  })
+}
+
+module.exports={studentregisterdata,viewOne,findstudentprofile,findeditprofile,findprofileupdate}
