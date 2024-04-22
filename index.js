@@ -5,6 +5,7 @@ var myapp= express()
 
 var bodyparser=require("body-parser")
 myapp.use(bodyparser.json())
+myapp.use(bodyparser.urlencoded({extended:false}))
 
 var cors=require("cors")
 myapp.use(cors())
