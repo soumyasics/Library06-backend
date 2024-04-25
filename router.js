@@ -20,6 +20,9 @@ router.post('/studentcomplient',complientcontroler.studentcomplientdata)
 
 router.post('/addbook',addbookcontroler.upload,addbookcontroler.addbookdata)
 router.get('/findbook',addbookcontroler.findbookdata)
+router.get('/viewonebookdetail/:id',addbookcontroler.upload,addbookcontroler.viewonebook)
+router.get('/findbook/:id',addbookcontroler.bookdetailfound)
+router.post('/onebookupdate/:id',addbookcontroler.bookupdate)
 
 
 
