@@ -46,7 +46,7 @@ var findbookdata=(req,res)=>{
     addbookschema.find()
     .then((data)=>{
         res.json({
-            msg:"find the book details",
+            msg:" book details finds",
             data:data,
             status:200
         })

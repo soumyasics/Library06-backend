@@ -5,6 +5,7 @@ var registercontroler=require('./controler/registercontroler')
 var feedbackcontroler= require('./controler/feedbackcontroler')
 var complientcontroler=require('./controler/complientcontroler')
 var addbookcontroler=require('./controler/addbookcontroler')
+var hirebookcontroler=require('./controler/hirebookcontroler')
 
 router.post('/registerdata',registercontroler.studentregisterdata)
 router.post('/find',registercontroler.viewOne)
@@ -23,6 +24,9 @@ router.get('/findbook',addbookcontroler.findbookdata)
 router.get('/viewonebookdetail/:id',addbookcontroler.upload,addbookcontroler.viewonebook)
 router.get('/findbook/:id',addbookcontroler.bookdetailfound)
 router.post('/onebookupdate/:id',addbookcontroler.bookupdate)
+
+router.post('/hirebookdata/:studentid',hirebookcontroler.hirebook)
+router.get('/hirebookfind/:studentid',hirebookcontroler.findhirebook)
 
 
 
