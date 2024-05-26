@@ -18,4 +18,23 @@ var studentfeedbackdata=async(req,res)=>{
         })
     })
 }
-module.exports={studentfeedbackdata}
+const feedbackdata=async(req,res)=>{
+    feedbackschema.find()
+    .then((data)=>{
+        res.json({
+            msg:"reedfeedback",
+            status:200,
+            data:data
+
+        })
+    })
+    .catch((err)=>{
+        res.json({
+            msg:"notfound feedbacks",
+            status:400,
+            
+        })
+    })
+
+}
+module.exports={studentfeedbackdata,feedbackdata}
